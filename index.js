@@ -19,11 +19,20 @@ const send = async (option) => {
   });
 };
 
-let email_data = {
-  from: "seoksuho@gmail.com",
-  to: "seoksuho@gmail.com",
-  subject: "테스트 메일입니다.",
-  text: "nodejs 테스트",
-};
+function generateMail(from, to, subject, text) {
+  return {
+    from: from,
+    to: to,
+    subject: subject,
+    text: text,
+  };
+}
 
-send(email_data);
+send(
+  generateMail(
+    "seoksuho@gmail.com",
+    "turbogara1@gmail.com",
+    "테스트 메일입니다",
+    "테스트 내용입니다"
+  )
+);
