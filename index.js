@@ -28,11 +28,4 @@ const send = async (option) => {
   });
 };
 
-send(
-  generateMail(
-    "seoksuho@gmail.com",
-    "turbogara1@gmail.com",
-    "테스트 메일입니다",
-    "테스트 내용입니다"
-  )
-);
+send(generateMail("테스트 메일입니다", "테스트 내용입니다"));
