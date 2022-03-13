@@ -8,6 +8,15 @@ const email = {
   },
 };
 
+function generateMail(from, to, subject, text) {
+  return {
+    from: from,
+    to: to,
+    subject: subject,
+    text: text,
+  };
+}
+
 const send = async (option) => {
   mailer.createTransport(email).sendMail(option, (error, info) => {
     if (error) {
@@ -18,15 +27,6 @@ const send = async (option) => {
     }
   });
 };
-
-function generateMail(from, to, subject, text) {
-  return {
-    from: from,
-    to: to,
-    subject: subject,
-    text: text,
-  };
-}
 
 send(
   generateMail(
